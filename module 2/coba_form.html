@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Sederhana</title>
+    <link rel="icon" type="img/png" href="gambar/icon.png" sizes="16x16" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+ 
+    <form action="/action_page.php">
+        <label for="depan">Nama depan:</label><br>
+        <input type="text" id="depan" name="i_name" value="Budi"><br>
+        <label for="n_belakang">Nama Belakang:</label><br>
+        <input type="text" id="n_belakang" name="i_belakan" value="Prawira"><br><br>
+        <input type="submit" value="Kirim">
+        <input type="reset" value="Reset">
+    </form>
+ 
+    <p>Jika Anda mengklik tombol "Kirim", data formulir akan dikirim ke halaman bernama "/action_page.php".</p>
+ 
+    <p><!-- Kesimpulan Ujicoba Disini -->
+        Kesimpulan :<br>
+        1. Tombol Reset : mengosongkan semua isian kembali ke nilai awal (value).<br>
+        2. Tombol Kirim : mengirimkan data form ke halaman yang ditentukan di atribut action.<br>
+        3. target="_self" : halaman terbuka di tab yang sama.<br>
+        &nbsp;&nbsp;&nbsp;target="_blank" : halaman terbuka di tab baru.<br>
+        &nbsp;&nbsp;&nbsp;target="_parent" : halaman terbuka di frame induk.<br>
+        &nbsp;&nbsp;&nbsp;target="_top" : halaman terbuka penuh di jendela saat ini.<br>
+        4. method="get" : data dikirim lewat URL (terlihat di address bar), cocok untuk data tidak sensitif.<br>
+        &nbsp;&nbsp;&nbsp;method="post" : data dikirim lewat body HTTP (tidak terlihat di URL), lebih aman untuk data sensitif.
+    </p>
+ 
+</body>
+</html>
