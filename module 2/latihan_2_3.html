@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Div dan Span</title>
+    <link rel="icon" type="img/png" href="gambar/icon.png" sizes="16x16" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='css/main.css'>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f0f0f0; }
+
+        #header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #main {
+            display: flex;
+            min-height: calc(100vh - 80px);
+        }
+
+        #link {
+            background-color: #34495e;
+            width: 180px;
+            padding: 20px;
+        }
+
+        #link ul { list-style: none; }
+        #link ul li { margin-bottom: 10px; }
+        #link ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        #link ul li a:hover { background-color: #2980b9; }
+
+        #content {
+            flex: 1;
+            padding: 20px;
+            background: white;
+        }
+
+        #footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+
+        /* Form Styles */
+        fieldset {
+            border: 1px solid #2c3e50;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        legend {
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 0 8px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 5px 8px; vertical-align: top; }
+        td:first-child { width: 220px; font-weight: bold; }
+        input[type="text"], input[type="file"], textarea, select {
+            width: 100%;
+            padding: 5px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea { resize: vertical; }
+        input[type="submit"], input[type="reset"] {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 8px;
+        }
+        input[type="submit"] { background: #2980b9; color: white; }
+        input[type="reset"] { background: #e74c3c; color: white; }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Judul/Header Website</h1>
+    </div>
+
+    <div id="main">
+        <div id="link">
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Tokyo</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <!-- Form Pendaftaran Mahasiswa Baru -->
+            <form action="proses.php" method="POST">
+                <fieldset>
+                    <legend>Form Pendaftaran Mahasiswa Baru</legend>
+                    <table>
+                        <tr>
+                            <td><label for="nama_lengkap">Nama Lengkap</label></td>
+                            <td><input type="text" id="nama_lengkap" name="nama_lengkap"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Tempat/Tanggal Lahir</label></td>
+                            <td>
+                                <input type="text" name="tempat_lahir" placeholder="Tempat" style="width:45%; margin-right:5px;">
+                                /
+                                <select name="tgl">
+                                    <?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
+                                </select>
+                                -
+                                <select name="bln">
+                                    <?php for($i=1;$i<=12;$i++) echo "<option>$i</option>"; ?>
+                                </select>
+                                -
+                                <select name="thn">
+                                    <?php for($i=1989;$i<=1994;$i++) echo "<option>$i</option>"; ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="agama">Agama</label></td>
+                            <td>
+                                <select id="agama" name="agama">
+                                    <option value="">-PILIH-</option>
+                                    <option value="islam">Islam</option>
+                                    <option value="kristen">Kristen</option>
+                                    <option value="katolik">Katolik</option>
+                                    <option value="hindu">Hindu</option>
+                                    <option value="budha">Budha</option>
+                                    <option value="konghucu">Konghucu</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Jenis Kelamin</label></td>
+                            <td>
+                                <input type="radio" id="laki" name="jenis_kelamin" value="Laki-laki">
+                                <label for="laki">Laki-laki</label>
+                                &nbsp;
+                                <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan">
+                                <label for="perempuan">Perempuan</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="ijazah">No. Ijazah SMA/MA</label></td>
+                            <td><input type="text" id="ijazah" name="ijazah"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="foto">Foto (Ukuran File Maks. 20 KB)</label></td>
+                            <td><input type="file" id="foto" name="foto"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="nama_ayah">Nama Ayah</label></td>
+                            <td><input type="text" id="nama_ayah" name="nama_ayah"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="nama_ibu">Nama Ibu</label></td>
+                            <td><input type="text" id="nama_ibu" name="nama_ibu"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="alamat_rumah">Alamat Rumah</label></td>
+                            <td><textarea id="alamat_rumah" name="alamat_rumah" rows="4"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="no_telp">No. Telp</label></td>
+                            <td><input type="text" id="no_telp" name="no_telp"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="nama_sekolah">Nama Sekolah Asal</label></td>
+                            <td><input type="text" id="nama_sekolah" name="nama_sekolah"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="alamat_sekolah">Alamat Sekolah Asal</label></td>
+                            <td><textarea id="alamat_sekolah" name="alamat_sekolah" rows="4"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="jurusan">Jurusan Dipilih</label></td>
+                            <td>
+                                <select id="jurusan" name="jurusan">
+                                    <option value="">-PILIH-</option>
+                                    <option value="ka">Komputerisasi Akuntansi</option>
+                                    <option value="ab">Administrasi Bisnis</option>
+                                    <option value="tkk">Teknik Komputer Kontrol</option>
+                                    <option value="tl">Teknik Listrik</option>
+                                    <option value="mo">Mesin Otomotif</option>
+                                    <option value="pk">Perkeretaapian</option>
+                                    <option value="ti">Teknologi Informasi</option>
+                                    <option value="ak">Akuntansi</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Tahu informasi ini dari :</label></td>
+                            <td>
+                                <input type="checkbox" id="koran" name="info[]" value="Koran">
+                                <label for="koran">Koran</label>
+                                <input type="checkbox" id="website" name="info[]" value="Website">
+                                <label for="website">Website</label>
+                                <input type="checkbox" id="televisi" name="info[]" value="Televisi">
+                                <label for="televisi">Televisi</label>
+                                <input type="checkbox" id="radio" name="info[]" value="Radio">
+                                <label for="radio">Radio</label>
+                                <input type="checkbox" id="teman" name="info[]" value="Teman">
+                                <label for="teman">Teman</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="DAFTAR">
+                                <input type="reset" value="BATAL">
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer">
+        <i>copyright@NADIN_2533070352023</i>
+    </div>
+
+</body>
+</html>
