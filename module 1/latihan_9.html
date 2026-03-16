@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Latihan iframe dan link target">
+    <meta name="keywords" content="iframe, link, target">
+    <meta name="author" content="NADIN">
+    <title>Halaman HTML saya</title>
+</head>
+<body>
+ 
+    <h1>Kisah-kisah disekolah</h1>
+ 
+    <p>
+        Masa sekolah adalah masa yang menyenangkan bagiku. Sebagian besar waktu hidupku sampai 
+        saat ini dihabiskan untuk sekolah, dan aku sangat menikmati saat-saat itu. Inilah sebagian 
+        kisah-kisahku disekolah.
+    </p>
+ 
+    <hr> <!-- menampilkan garis -->
+ 
+    <!-- IFRAME -->
+    <iframe width="30%" height="179" src="latihan_1_1.html" name="if"></iframe>
+    <iframe width="30%" height="179" src="latihan_1_2.html" frameborder="0"></iframe>
+    <iframe width="30%" height="179" src="latihan_1_3.html" scrolling="no"></iframe>
+ 
+    <br><br>
+ 
+    <!-- LINK DENGAN TARGET KE IFRAME -->
+    <a href="latihan_1_2.html" target="if">Halaman 2</a>
+ 
+    <br><br>
+ 
+    <!-- KESIMPULAN DENGAN FORMAT DELETED TEXT -->
+    <p>
+        <del>
+            Kesimpulan : Ketika atribut target pada link diisi dengan nilai name dari sebuah iframe,
+            maka halaman yang dituju oleh link tersebut akan ditampilkan di dalam iframe yang memiliki
+            name yang sama. Jadi link dengan target="if" akan membuka halaman di dalam iframe yang
+            memiliki name="if", bukan membuka tab atau jendela baru.
+        </del>
+    </p>
+ 
+</body>
+</html>
+ 
