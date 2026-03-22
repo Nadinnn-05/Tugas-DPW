@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeri Foto - MARTIN EDWARDS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    /* Galeri Flexbox - 5 kolom */
+    .galeri {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Setiap item galeri */
+    .galeri-item {
+      width: 150px;  
+      height: 150px; 
+      overflow: hidden;
+      border: 3px solid #aaa;
+      border-radius: 6px;
+      background-color: #ddd;
+    }
+
+    .galeri-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .galeri-item img:hover {
+      transform: scale(1.1);
+      border-color: blue;
+    }
+
+    .galeri-item .nomor {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: #555;
+      background-color: #ccc;
+    }
+
+    footer-info {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Galeri Foto Martin Edwards (18 Item — 5 Kolom x 4 Baris)</h2>
+
+  <div class="galeri">
+
+    <!-- Baris 1 -->
+    <div class="galeri-item">
+      <img src="gambar/martin.jpg" alt="Foto 1"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>1</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin1.jpg" alt="Foto 2"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>2</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin2.jpg" alt="Foto 3"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>3</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin3.jpg" alt="Foto 4"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>4</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin4.jpg" alt="Foto 5"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>5</div>'">
+    </div>
+
+    <!-- Baris 2 -->
+    <div class="galeri-item">
+      <img src="gambar/martin5.jpg" alt="Foto 6"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>6</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin6.jpg" alt="Foto 7"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>7</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin7.jpg" alt="Foto 8"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>8</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin8.jpg" alt="Foto 9"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>9</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin9.jpg" alt="Foto 10"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>10</div>'">
+    </div>
+
+    <!-- Baris 3 -->
+    <div class="galeri-item">
+      <img src="gambar/martin10.jpg" alt="Foto 11"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>11</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin11.jpg" alt="Foto 12"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>12</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin12.jpg" alt="Foto 13"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>13</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin13.jpg" alt="Foto 14"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>14</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin14.jpg" alt="Foto 15"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>15</div>'">
+    </div>
+
+    <!-- Baris 4 -->
+    <div class="galeri-item">
+      <img src="gambar/martin15.jpg" alt="Foto 16"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>16</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin16.jpg" alt="Foto 17"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>17</div>'">
+    </div>
+    <div class="galeri-item">
+      <img src="gambar/martin17.jpg" alt="Foto 18"
+        onerror="this.style.display='none';
+        this.parentElement.innerHTML='<div class=nomor>18</div>'">
+    </div>
+
+  </div>
+
+  <br>
+  <p style="text-align:center;">
+    <strong>Nama:</strong> Nadin &nbsp;|&nbsp;
+    <strong>NIM:</strong> 253307035
+  </p>
+
+</body>
+</html>

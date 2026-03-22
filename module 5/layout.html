@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Layout CSS Grid -MARTIN EDWARDS</title>
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* ===========================
+       GRID CONTAINER
+    =========================== */
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'header header header'
+        'menu   main   right'
+        'menu   footer footer';
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: auto 300px auto;
+      gap: 5px;
+      background-color: #ccc;
+      padding: 5px;
+      min-height: 100vh;
+    }
+
+    /* ===========================
+       HEADER
+    =========================== */
+    .header {
+      grid-area: header;
+      background-color: #6699CC;
+      text-align: center;
+      padding: 20px;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* ===========================
+       MENU (kiri)
+    =========================== */
+    .menu {
+      grid-area: menu;
+      background-color: #B0C4DE;
+      padding: 20px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* ===========================
+       MAIN (tengah)
+    =========================== */
+    .main {
+      grid-area: main;
+      background-color: #E8E8E8;
+      padding: 20px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* ===========================
+       RIGHT (kanan)
+    =========================== */
+    .right {
+      grid-area: right;
+      background-color: #B0C4DE;
+      padding: 20px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    .footer {
+      grid-area: footer;
+      background-color: #6699CC;
+      text-align: center;
+      padding: 15px;
+      color: white;
+      font-size: 18px;
+    }
+
+    .kesimpulan {
+      background-color: #f9f9f9;
+      border-left: 4px solid #6699CC;
+      padding: 15px;
+      margin: 20px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+
+    <!-- Header -->
+    <div class="header">Header</div>
+
+    <!-- Menu kiri -->
+    <div class="menu">Menu</div>
+
+    <!-- Konten utama -->
+    <div class="main">Main</div>
+
+    <!-- Konten kanan -->
+    <div class="right">Right</div>
+
+    <!-- Footer -->
+    <div class="footer">Footer</div>
+
+  </div>
+
+  <!-- Kesimpulan -->
+  <div class="kesimpulan">
+    <strong>Kesimpulan:</strong><br>
+    - <code>display: grid</code>: mengaktifkan layout grid pada container.<br>
+    - <code>grid-template-areas</code>: mendefinisikan nama area untuk
+      setiap bagian layout (header, menu, main, right, footer).<br>
+    - <code>grid-template-columns: 1fr 2fr 1fr</code>: membagi lebar
+      menjadi 3 kolom — kiri 1 bagian, tengah 2 bagian, kanan 1 bagian.<br>
+    - <code>grid-template-rows</code>: mengatur tinggi setiap baris.<br>
+    - <code>grid-area</code>: menentukan item berada di area mana
+      sesuai nama yang sudah didefinisikan di grid-template-areas.<br>
+    - <code>gap</code>: jarak antar area grid.<br><br>
+    CSS Grid sangat cocok untuk membuat layout halaman web yang
+    kompleks karena bisa mengatur posisi elemen secara 2 dimensi
+    (baris dan kolom) sekaligus dengan mudah.<br><br>
+    <strong>Nama:</strong> Nadin &nbsp;|&nbsp;
+    <strong>NIM:</strong> 253307035
+  </div>
+
+</body>
+</html>

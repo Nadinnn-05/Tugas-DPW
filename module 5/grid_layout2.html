@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Belajar CSS Grid box</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      margin: 20px 0 10px 0;
+    }
+
+    /* ===========================
+       SKENARIO 1
+       grid-column-start & end
+    =========================== */
+    .grid-container-s1 {
+      display: grid;
+      grid-gap: 50px;
+      background-color: #2196F3;
+      padding: 10px;
+    }
+
+    .item1-s1 {
+      grid-column-start: 1;
+      grid-column-end: 3; /* item1 melebar dari kolom 1 sampai 3 */
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    /* ===========================
+       SKENARIO 2
+       grid-template-columns
+    =========================== */
+    .grid-container-s2 {
+      display: grid;
+      grid-gap: 50px;
+      background-color: #2196F3;
+      padding: 10px;
+      /* Coba nilai berbeda: */
+      grid-template-columns: auto auto auto auto; /* 4 kolom */
+      /* grid-template-columns: auto auto; */
+      /* grid-template-columns: 70px 300px auto 40px; */
+      /* grid-template-columns: 10px 500px 20px 10px; */
+    }
+
+    .item1-s2 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    /* Style item biasa */
+    .item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .kesimpulan {
+      background-color: #f9f9f9;
+      border-left: 4px solid #2196F3;
+      padding: 10px 15px;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Belajar CSS Grid Layout 2</h1>
+
+  <!-- ===================== -->
+  <!-- SKENARIO 1            -->
+  <!-- ===================== -->
+  <h2>Skenario 1 — grid-column-start & grid-column-end</h2>
+  <div class="grid-container-s1">
+    <div class="item1-s1">1 (melebar 2 kolom)</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">Kesimpulan skenario 1:
+      <code>grid-column-start: 1</code> dan
+      <code>grid-column-end: 3</code> membuat item1 mulai
+      dari kolom 1 dan berakhir di kolom 3, sehingga item
+      tersebut menempati 2 kolom sekaligus. Nilai start
+      dan end bisa diubah untuk mengatur seberapa lebar
+      item tersebut.
+    </div>
+  </div>
+
+  <!-- ===================== -->
+  <!-- SKENARIO 2            -->
+  <!-- ===================== -->
+  <h2>Skenario 2 — grid-template-columns (berbagai nilai)</h2>
+
+  <p><strong>auto auto auto auto (4 kolom sama rata):</strong></p>
+  <div class="grid-container-s2">
+    <div class="item1-s2">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+  </div>
+
+  <br>
+
+  <p><strong>70px 300px auto 40px (lebar berbeda-beda):</strong></p>
+  <div style="display:grid; grid-gap:10px; background:#2196F3;
+    padding:10px; grid-template-columns: 70px 300px auto 40px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+  </div>
+
+  <br>
+
+  <p><strong>10px 500px 20px 10px:</strong></p>
+  <div style="display:grid; grid-gap:10px; background:#2196F3;
+    padding:10px; grid-template-columns: 10px 500px 20px 10px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+  </div>
+
+  <p class="kesimpulan">
+    Kesimpulan skenario 2: <code>grid-template-columns</code>
+    menentukan jumlah kolom dan lebarnya.<br>
+    - <code>auto auto auto auto</code> = 4 kolom lebar sama rata<br>
+    - <code>70px 300px auto 40px</code> = kolom dengan lebar berbeda,
+      kolom ke-2 paling lebar (300px)<br>
+    - <code>10px 500px 20px 10px</code> = kolom ke-2 sangat dominan
+      (500px), kolom lain sangat sempit<br>
+    Kesimpulan: nilai px menentukan lebar tetap, auto menyesuaikan
+    sisa ruang yang tersedia.
+  </p>
+
+  <br>
+  <p><strong>Nama:</strong> Nadin &nbsp;|&nbsp;
+     <strong>NIM:</strong> 253307035</p>
+
+</body>
+</html>

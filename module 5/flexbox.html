@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Belajar Flex Box</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+    }
+
+    /* ===========================
+       SKENARIO 1 
+    =========================== */
+    .skenario1 {
+      display: flex;
+      background-color: lightcoral;
+    }
+
+    /* ===========================
+       SKENARIO 2 
+    =========================== */
+    .skenario2 {
+      display: flex;
+      background-color: lightblue;
+    }
+    .skenario2 > div {
+      background-color: #4CAF50;
+      margin: 10px;
+      padding: 20px;
+      font-size: 30px;
+      color: white;
+    }
+
+    /* ===========================
+       SKENARIO 3 
+    =========================== */
+    .skenario3 {
+      display: flex;
+      background-color: lightyellow;
+      flex-direction: column; 
+    }
+    .skenario3 > div {
+      background-color: #FF5722;
+      margin: 5px;
+      padding: 15px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    /* ===========================
+       SKENARIO 4 
+    =========================== */
+    .skenario4 {
+      display: flex;
+      background-color: lavender;
+      flex-wrap: wrap; 
+    }
+    .skenario4 > div {
+      background-color: #9C27B0;
+      margin: 5px;
+      padding: 15px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      width: 100px;
+    }
+
+    /* ===========================
+       SKENARIO 5
+    =========================== */
+    .skenario5 {
+      display: flex;
+      background-color: lightgreen;
+      flex-flow: row wrap; 
+    }
+    .skenario5 > div {
+      background-color: #2196F3;
+      margin: 5px;
+      padding: 15px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      width: 100px;
+    }
+
+    /* ===========================
+       SKENARIO 6 
+    =========================== */
+    .skenario6 {
+      display: flex;
+      background-color: #FFE0B2;
+      flex-wrap: wrap;
+      justify-content: space-around; 
+    }
+    .skenario6 > div {
+      background-color: #FF9800;
+      margin: 5px;
+      padding: 15px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      width: 100px;
+    }
+
+    
+    .kesimpulan {
+      background-color: #f9f9f9;
+      border-left: 4px solid #333;
+      padding: 10px 15px;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Belajar CSS Flexbox</h1>
+
+  <!-- ===================== -->
+  <!-- SKENARIO 1            -->
+  <!-- ===================== -->
+  <h2>Skenario 1 — display: flex</h2>
+  <div class="skenario1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <p class="kesimpulan">
+    Kesimpulan skenario 1: <code>display: flex</code> membuat elemen
+    anak (child) tersusun secara <strong>horizontal (baris)</strong> secara
+    otomatis. Tanpa flex, elemen div akan tersusun secara vertikal
+    (satu per satu ke bawah).
+  </p>
+
+  <!-- ===================== -->
+  <!-- SKENARIO 2            -->
+  <!-- ===================== -->
+  <h2>Skenario 2 — Styling Div Anak</h2>
+  <div class="skenario2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <p class="kesimpulan">
+    Kesimpulan skenario 2: dengan menambahkan style pada div anak
+    menggunakan selector <code>.wadah-flex &gt; div</code>, setiap item
+    mendapat warna background, margin, padding, dan ukuran font
+    sehingga tampilan menjadi lebih rapi dan terstruktur.
+  </p>
+
+  <!-- ===================== -->
+  <!-- SKENARIO 3            -->
+  <!-- ===================== -->
+  <h2>Skenario 3 — flex-direction</h2>
+  <div class="skenario3">
+    <div>1</div><div>2</div><div>3</div>
+    <div>4</div><div>5</div><div>6</div>
+    <div>7</div><div>8</div><div>9</div>
+    <div>10</div><div>11</div><div>12</div>
+  </div>
+  <p class="kesimpulan">
+    Kesimpulan skenario 3: <code>flex-direction</code> mengatur arah
+    susunan item flex.<br>
+    - <code>row</code> = kiri ke kanan (default)<br>
+    - <code>column</code> = atas ke bawah<br>
+    - <code>row-reverse</code> = kanan ke kiri<br>
+    - <code>column-reverse</code> = bawah ke atas
+  </p>
+
+  <!-- ===================== -->
+  <!-- SKENARIO 4            -->
+  <!-- ===================== -->
+  <h2>Skenario 4 — flex-wrap</h2>
+  <div class="skenario4">
+    <div>1</div><div>2</div><div>3</div>
+    <div>4</div><div>5</div><div>6</div>
+    <div>7</div><div>8</div><div>9</div>
+    <div>10</div><div>11</div><div>12</div>
+  </div>
+  <p class="kesimpulan">
+    Kesimpulan skenario 4: <code>flex-wrap</code> mengatur apakah
+    item flex boleh pindah ke baris baru.<br>
+    - <code>nowrap</code> = semua dalam 1 baris meskipun melebihi lebar<br>
+    - <code>wrap</code> = item turun ke baris berikutnya jika tidak cukup ruang<br>
+    - <code>wrap-reverse</code> = item naik ke baris sebelumnya
+  </p>
+
+  <!-- ===================== -->
+  <!-- SKENARIO 5            -->
+  <!-- ===================== -->
+  <h2>Skenario 5 — flex-flow</h2>
+  <div class="skenario5">
+    <div>1</div><div>2</div><div>3</div>
+    <div>4</div><div>5</div><div>6</div>
+    <div>7</div><div>8</div><div>9</div>
+    <div>10</div><div>11</div><div>12</div>
+  </div>
+  <p class="kesimpulan">
+    Kesimpulan skenario 5: <code>flex-flow</code> adalah shorthand
+    (singkatan) yang menggabungkan <code>flex-direction</code> dan
+    <code>flex-wrap</code> dalam satu properti.<br>
+    Contoh: <code>flex-flow: row wrap</code> = arah horizontal + item
+    boleh turun ke baris baru.
+  </p>
+
+  <!-- ===================== -->
+  <!-- SKENARIO 6            -->
+  <!-- ===================== -->
+  <h2>Skenario 6 — justify-content</h2>
+  <div class="skenario6">
+    <div>1</div><div>2</div><div>3</div>
+    <div>4</div><div>5</div><div>6</div>
+    <div>7</div><div>8</div><div>9</div>
+    <div>10</div><div>11</div><div>12</div>
+  </div>
+  <p class="kesimpulan">
+    Kesimpulan skenario 6: <code>justify-content</code> mengatur
+    posisi/distribusi item secara horizontal (sumbu utama).<br>
+    - <code>flex-start</code> = rata kiri<br>
+    - <code>flex-end</code> = rata kanan<br>
+    - <code>center</code> = tengah<br>
+    - <code>space-between</code> = jarak rata antar item, tanpa tepi<br>
+    - <code>space-around</code> = jarak rata antar item, termasuk tepi
+  </p>
+
+  <br>
+  <p><strong>Nama:</strong> Nadin &nbsp;|&nbsp; <strong>NIM:</strong> 253307035</p>
+
+</body>
+</html>
