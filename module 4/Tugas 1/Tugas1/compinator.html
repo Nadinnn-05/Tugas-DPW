@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Combinator Selector</title>
+  <style>
+    div p   { color: red; }             
+    div > p { background-color: yellow; } 
+    div + p { background-color: darkgray; } 
+    div ~ p { color: cyan; }           
+  </style>
+</head>
+<body>
+  <div>
+    <p>Selektor no 1: div p — Descendant selector.
+       Memilih SEMUA elemen p yang berada DI DALAM div,
+       tidak harus langsung. Teks berwarna merah.</p>
+    <p>Selektor no 2: div &gt; p — Child selector.
+       Memilih elemen p yang merupakan anak LANGSUNG dari div.
+       Background kuning.</p>
+  </div>
+  <p>Selektor no 3: div + p — Adjacent sibling selector.
+     Memilih elemen p yang langsung SETELAH div (berdampingan).
+     Background abu gelap.</p>
+  <p>Selektor no 4: div ~ p — General sibling selector.
+     Memilih SEMUA elemen p yang berada setelah div (saudara).
+     Teks berwarna cyan.</p>
+</body>
+</html>

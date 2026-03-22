@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pseudo-class Selector</title>
+  <style>
+    p {
+      display: none;
+      background-color: darkgray;
+      padding: 20px;
+    }
+    div:hover p {
+      display: block; 
+    }
+
+    
+    a:link    { color: blue; text-decoration: none; }
+    a:visited { color: purple; }
+    a:hover   { color: red; font-weight: bold; }
+    a:active  { color: orange; }
+  </style>
+</head>
+<body>
+  <div>Letakkan kursor disini untuk melihat div elemet
+    <p>Saya adalah element p — muncul saat kursor hover di atas div!</p>
+  </div>
+
+  <br>
+  <p style="display:block; background:none; padding:0;">
+    Coba arahkan mouse ke link di bawah:
+  </p>
+  <a href="#">Link ini berubah warna saat di-hover!</a>
+</body>
+</html>
