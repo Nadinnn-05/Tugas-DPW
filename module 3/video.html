@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Video - CORTIS UNIVERSE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Nadin">
+  <meta name="nim" content="253307035">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; }
+    header {
+      background-color: #666;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+    nav {
+      float: left;
+      width: 30%;
+      min-height: 100vh; 
+      background: #ccc;
+      padding: 20px;
+    }
+    nav ul { list-style-type: none; padding: 0; }
+    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      background-color: #f1f1f1;
+      min-height: 100vh; 
+    }
+    section::after { content: ""; display: table; clear: both; }
+    footer {
+      background-color: #777;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      clear: both;
+    }
+    @media (max-width: 600px) {
+      nav, article { width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>CORTIS UNIVERSE</h2>
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gambar.html">Gambar</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="svg.html">SVG</a></li>
+        <li><a href="canvas.html">Canvas</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>Pemutar Video CORTIS</h1>
+
+      <!-- Video Lokal -->
+      <video width="420" height="315" controls autoplay muted>
+        <source src="video/MV.What You Want.mp4" type="video/mp4">
+        Browser tidak mendukung pemutar video.
+      </video>
+
+      <br><br>
+
+        <!-- Video YouTube -->
+      <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/e2OpbOv_JiQ"
+        allow="accelerometer; autoplay; clipboard-write;
+               encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+      <p><strong>Kesimpulan:</strong><br>
+      - <code>controls</code>: menampilkan tombol play, pause, dan volume.<br>
+      - <code>autoplay</code>: video otomatis diputar saat halaman dibuka.<br>
+      - <code>muted</code>: video tanpa suara agar autoplay diizinkan browser.<br>
+      - <code>&lt;iframe&gt;</code>: menyematkan video YouTube tanpa mengunduh file.
+      </p>
+
+      <p><strong>Nama:</strong> Nadin &nbsp;|&nbsp; <strong>NIM:</strong> 253307035</p>
+    </article>
+  </section>
+
+  <footer>
+    <p>Footer &mdash; Nadin (NIM: 253307035)</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pendaftaran - CORTIS UNIVERSE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Nadin">
+  <meta name="nim" content="253307035">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    header {
+      background-color: #666;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+    nav {
+      float: left;
+      width: 30%;
+      min-height: 100vh;
+      background: #ccc;
+      padding: 20px;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      background-color: #f1f1f1;
+      min-height: 100vh;
+    }
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    footer {
+      background-color: #777;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      clear: both;
+    }
+    @media (max-width: 600px) {
+      nav, article {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    fieldset {
+      border: 1px solid #999;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      background: #fff;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 8px;
+      color: #444;
+    }
+    .form-group {
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-group label {
+      width: 220px;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .form-group input {
+      padding: 5px 8px;
+      font-size: 14px;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      width: 200px;
+    }
+    input[type="range"] {
+      width: 200px;
+      padding: 0;
+      border: none;
+    }
+    input[type="submit"] {
+      padding: 8px 20px;
+      font-size: 14px;
+      background-color: #666;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+    input[type="submit"]:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>CORTIS UNIVERSE</h2>
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gambar.html">Gambar</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="svg.html">SVG</a></li>
+        <li><a href="canvas.html">Canvas</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>Form Penjadwal Pertemuan</h1>
+
+      <form>
+
+        <!-- Fieldset 1: Informasi Pribadi -->
+        <fieldset>
+          <legend>Informasi Pribadi</legend>
+
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama"
+              placeholder="Masukkan nama" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telepon">No. Telepon</label>
+            <input type="tel" id="telepon" name="telepon"
+              pattern="[0-9]{4}-[0-9]{6}"
+              placeholder="0812-345678" required
+              title="Format: XXXX-XXXXXX">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Alamat Email</label>
+            <input type="email" id="email" name="email"
+              placeholder="nama@domain.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tgl_lahir">Tanggal Lahir</label>
+            <input type="date" id="tgl_lahir" name="tgl_lahir"
+              min="1987-01-01" max="1993-01-01" required>
+          </div>
+        </fieldset>
+
+        <!-- Fieldset 2: Permintaan Pertemuan -->
+        <fieldset>
+          <legend>Permintaan Pertemuan</legend>
+
+          <div class="form-group">
+            <label for="tujuan">Tujuan Pertemuan</label>
+            <input type="text" id="tujuan" name="tujuan"
+              placeholder="Masukkan tujuan" required>
+          </div>
+
+          <div class="form-group">
+            <label for="kepentingan">Tingkat Kepentingan Pertemuan</label>
+            <input type="range" id="kepentingan" name="kepentingan"
+              min="0" max="10" value="5"
+              title="0 = Tidak Penting, 10 = Mendesak">
+          </div>
+
+          <div class="form-group">
+            <label for="tanggal">Tanggal</label>
+            <input type="date" id="tanggal" name="tanggal"
+              min="2026-03-18" required>
+          </div>
+
+          <div class="form-group">
+            <label for="waktu">Waktu</label>
+            <input type="time" id="waktu" name="waktu"
+              min="17:00" max="21:00" required
+              title="Jam 17.00 - 21.00 WIB">
+          </div>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+
+      </form>
+
+      <p><strong>Nama:</strong> Nadin &nbsp;|&nbsp; <strong>NIM:</strong> 253307035</p>
+    </article>
+  </section>
+
+  <footer>
+    <p>Footer &mdash; Nadin (NIM: 253307035)</p>
+  </footer>
+
+</body>
+</html>
