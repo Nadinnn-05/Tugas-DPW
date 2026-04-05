@@ -1,0 +1,53 @@
+//AJAX (Asynchronous JavaScript and XML)
+//AJAX adalah teknik pemrograman web yang memungkinkan halaman web berkomunikasi dengan server di latar belakang tanpa harus me-reload/refresh seluruh halaman. Data yang dikirim/diterima bisa berupa XML, JSON, HTML, atau teks biasa.
+//Manfaat AJAX:
+//1. Halaman lebih responsif dan cepat
+//2. Hemat bandwidth (hanya data yang diperlukan yang dikirim)
+//3. Pengalaman pengguna lebih baik (seperti aplikasi desktop)
+
+//Contoh penggunaan AJAX untuk mengambil data dari server (menggunakan XMLHttpRequest):
+function loadData() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "data.txt", true);        
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            document.getElementById("result").innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send();
+}
+
+//Contoh penggunaan AJAX dengan Fetch API (lebih modern):
+function loadData() {
+  fetch("data.txt")
+    
+    
+    .then(response => response.text())
+
+    .then(data => {
+        document.getElementById("result").innerHTML = data;
+    })
+    .catch(error => console.error("Error:", error));
+}
+
+//jQuery
+//jQuery adalah library JavaScript yang memudahkan manipulasi DOM, event handling, animasi, dan AJAX. Dengan jQuery, kita bisa menulis kode yang lebih singkat dan mudah dibaca dibandingkan dengan JavaScript murni.
+//Contoh penggunaan jQuery untuk mengambil data dari server:
+$(document).ready(function() {
+    $("#loadButton").click(function() {
+        $.ajax({
+            url: "data.txt",
+            method: "GET",
+            success: function(data) {
+                $("#result").html(data);
+            },
+            error: function(xhr, status, error) {
+                console.error("Error:", error);
+            }
+        });
+    }
+);
+});
+
+    

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jam Real Time</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 100px; }
+    #jam { font-size: 48px; color: #2c3e50; }
+    #tanggal { font-size: 24px; color: #7f8c8d; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div id="jam">00:00:00</div>
+  <div id="tanggal"></div>
+
+  <script>
+    function tampilkanWaktu() {
+      var sekarang = new Date();
+      var jam     = sekarang.getHours().toString().padStart(2, '0');
+      var menit   = sekarang.getMinutes().toString().padStart(2, '0');
+      var detik   = sekarang.getSeconds().toString().padStart(2, '0');
+
+      var hari    = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+      var bulan   = ['Jan','Feb','Mar','Apr','Mei','Jun',
+                     'Jul','Agu','Sep','Okt','Nov','Des'];
+
+      var namaHari  = hari[sekarang.getDay()];
+      var tgl       = sekarang.getDate();
+      var namaBulan = bulan[sekarang.getMonth()];
+      var tahun     = sekarang.getFullYear();
+
+      document.getElementById('jam').innerHTML = jam + ':' + menit + ':' + detik;
+      document.getElementById('tanggal').innerHTML =
+        namaHari + ', ' + tgl + ' ' + namaBulan + ' ' + tahun;
+    }
+
+    // Perbarui setiap 1 detik
+    setInterval(tampilkanWaktu, 1000);
+    tampilkanWaktu(); // Panggil langsung agar tidak delay
+  </script>
+</body>
+</html>

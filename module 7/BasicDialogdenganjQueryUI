@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Dialog jQuery</title>
+  <link rel="stylesheet"
+    href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    button { padding: 10px 20px; background: #3498db;
+             color: white; border: none; cursor: pointer;
+             border-radius: 4px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Contoh Basic Dialog</h2>
+  <button id="bukaDialog">Buka Dialog</button>
+
+  <!-- Konten Dialog -->
+  <div id="dialogKu" title="Informasi">
+    <p>Ini adalah contoh <strong>Basic Dialog</strong> menggunakan jQuery UI.</p>
+    <p>Anda dapat menutupnya dengan klik tombol Tutup atau tanda X.</p>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      // Inisialisasi dialog (awalnya tersembunyi)
+      $("#dialogKu").dialog({
+        autoOpen: false,      // Jangan buka otomatis
+        modal: true,          // Latar belakang gelap
+        width: 400,
+        buttons: {
+          "Tutup": function() {
+            $(this).dialog("close");
+          }
+        }
+      });
+
+      // Buka dialog saat tombol diklik
+      $("#bukaDialog").click(function() {
+        $("#dialogKu").dialog("open");
+      });
+    });
+  </script>
+</body>
+</html>
