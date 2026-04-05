@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Download Dialog dengan Progressbar</title>
+  <link rel="stylesheet"
+    href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    #progressbar { margin-top: 15px; height: 25px; border-radius: 4px; }
+    #progressLabel { text-align: center; margin-top: 8px;
+                     font-weight: bold; color: #2c3e50; }
+    #statusTeks { margin-top: 10px; color: #27ae60; font-weight: bold; }
+    button { padding: 10px 20px; background: #27ae60;
+             color: white; border: none; cursor: pointer;
+             border-radius: 4px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Download Dialog dengan Progressbar</h2>
+  <button id="tombolDownload">📥 Mulai Download</button>
+
+  <!-- Dialog Download -->
+  <div id="dialogDownload" title="Mengunduh File...">
+    <p>File sedang diunduh, harap tunggu...</p>
+    <div id="progressbar"></div>
+    <div id="progressLabel">0%</div>
+    <div id="statusTeks"></div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+
+      // Inisialisasi progressbar
+      $("#progressbar").progressbar({ value: 0 });
+
+      // Inisialisasi dialog
+      $("#dialogDownload").dialog({
+        autoOpen: false,
+        modal: true,
+        width: 450,
+        closeOnEscape: false,  // Tidak bisa ditutup dengan ESC
+        open: function() {
+          // Nonaktifkan tombol close
+          $(this).closest(".ui-dialog")
+                 .find(".ui-dialog-titlebar-close").hide();
+        }
+      });
+
+      // Fungsi simulasi download
+      function mulaiDownload() {
+        var progress = 0;
+        var interval = setInterval(function() {
+          progress += 5;
+          $("#progressbar").progressbar("value", progress);
+          $("#progressLabel").text(progress + "%");
+
+          if (progress >= 100) {
+            clearInterval(interval);
+            $("#statusTeks").text("✅ Download Selesai!");
+            // Tampilkan tombol tutup setelah selesai
+            $("#dialogDownload").dialog("option", "buttons", {
+              "Tutup": function() { $(this).dialog("close"); }
+            });
+          }
+        }, 200); // Tambah 5% setiap 200ms = selesai dalam ~4 detik
+      }
+
+      // Buka dialog dan mulai download saat tombol diklik
+      $("#tombolDownload").click(function() {
+        // Reset progressbar
+        $("#progressbar").progressbar("value", 0);
+        $("#progressLabel").text("0%");
+        $("#statusTeks").text("");
+        // Hapus tombol tutup dulu
+        $("#dialogDownload").dialog("option", "buttons", {});
+        // Buka dialog
+        $("#dialogDownload").dialog("open");
+        // Mulai simulasi download
+        mulaiDownload();
+      });
+    });
+  </script>
+</body>
+</html>
