@@ -1,0 +1,19 @@
+<!-- Tombol -->
+<button class="btn btn-primary">Tombol Biru</button>
+<button class="btn btn-danger">Tombol Merah</button>
+
+<!-- Grid System (12 kolom) -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">Kolom Kiri</div>
+    <div class="col-md-6">Kolom Kanan</div>
+  </div>
+</div>
+
+<!-- Card -->
+<div class="card" style="width: 300px;">
+  <div class="card-body">
+    <h5 class="card-title">Judul Card</h5>
+    <p class="card-text">Isi konten card.</p>
+  </div>
+</div>
