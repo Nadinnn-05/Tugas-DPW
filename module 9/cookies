@@ -1,0 +1,15 @@
+<?php
+// Menyimpan data identitas ke cookies (berlaku 30 hari)
+setcookie("nama",  "Nadin",                 time() + (86400 * 30), "/");
+setcookie("nim",   "253307035",             time() + (86400 * 30), "/");
+setcookie("email", "Nadin@example.com",     time() + (86400 * 30), "/");
+
+// Membaca cookies
+if (isset($_COOKIE["nama"])) {
+    echo "Nama  : " . $_COOKIE["nama"]  . "<br>";
+    echo "NIM   : " . $_COOKIE["nim"]   . "<br>";
+    echo "Email : " . $_COOKIE["email"] . "<br>";
+} else {
+    echo "Cookie belum diset.";
+}
+?>
